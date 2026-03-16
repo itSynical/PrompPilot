@@ -1,0 +1,15 @@
+"""
+Background scheduler that triggers one article per 24h.
+Run this alongside Flask app (e.g., in Render background worker).
+"""
+import time, datetime, requests
+
+APP_URL = "[localhost](http://localhost:5000/generate)"
+
+while True:
+    try:
+        print(datetime.datetime.utcnow(), "Generating daily post...")
+        requests.get(APP_URL)
+    except Exception as e:
+        print("Scheduler error:", e)
+    time.sleep(24*3600)  # wait 24h

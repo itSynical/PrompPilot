@@ -1,0 +1,17 @@
+% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4">Prompt Store</h1>
+<div class="row">
+{% for n in [1,2,3,4] %}
+<div class="col-md-3 mb-4">
+  <div class="card h-100 shadow-sm text-center">
+    <div class="card-body">
+      <h5 class="card-title">Prompt Pack {{ n }}</h5>
+      <p>Set of 50 curated business and marketing prompts to automate strategy.</p>
+      <button class="btn btn-success">Buy Now</button>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

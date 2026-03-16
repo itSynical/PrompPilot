@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: promptpilot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+  - type: worker
+    name: promptpilot-scheduler
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python scheduler.py"

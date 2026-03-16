@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4">Latest Articles</h1>
+<a class="btn btn-primary mb-3" href="/generate">Generate New Article</a>
+<div class="row">
+{% for p in posts %}
+  <div class="col-md-6 mb-4">
+    <div class="card shadow-sm">
+      {% if p[3] %}
+      <img src="/static/images/{{p[3]}}" class="card-img-top" alt="">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title"><a href="/post/{{p[0]}}">{{p[1]}}</a></h5>
+        <p class="card-text"><small>{{p[2]}}</small></p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
